@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="TEGO OS 2.1 — 독자 x86_64 커널 기반의 그래픽 운영체제 프로젝트" />
+  <title>TEGO OS 2.1 — Download</title>
+  <style>
+    :root{--bg:#07111d;--panel:#0d1c2b;--panel2:#10283d;--line:#244664;--text:#eef7ff;--muted:#9db1c5;--accent:#49b7ff;--accent2:#72ffd2;--shadow:0 18px 60px rgba(0,0,0,.38)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 20% 0%,#10304c 0,transparent 35%),linear-gradient(180deg,#06101b,#081522 50%,#07101a);color:var(--text);min-height:100vh}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
+    nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(16px);background:rgba(6,16,27,.72);border-bottom:1px solid rgba(255,255,255,.07)}
+    .navin{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:.14em}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}
+    .hero{padding:92px 0 54px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(73,183,255,.08);color:#ccecff;font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 16px var(--accent2)}
+    h1{font-size:clamp(54px,9vw,110px);line-height:.88;margin:26px 0 22px;letter-spacing:-.065em}.gradient{background:linear-gradient(90deg,#fff 20%,#8ed1ff 55%,#7affd8);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:730px;color:var(--muted);font-size:clamp(18px,2.5vw,24px);line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:12px;font-weight:800;border:1px solid var(--line);transition:.18s transform,.18s background,.18s border-color}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,#1999ef,#43c6ff);border-color:transparent;color:#00111c;box-shadow:0 12px 32px rgba(36,170,255,.22)}.secondary{background:#0d1a28;color:#d7e7f5}
+    .screen{margin-top:60px;background:#060b10;border:1px solid #2a455d;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.chrome{height:42px;background:#172330;border-bottom:1px solid #314252;display:flex;align-items:center;gap:8px;padding:0 14px}.c{width:11px;height:11px;border-radius:50%;background:#4b5b68}.fakeos{min-height:430px;background:linear-gradient(#2a5279 0 50%,#15304b 50%);position:relative;padding:28px}.os-title{font-size:34px;font-weight:900;letter-spacing:.04em}.desktop-icon{position:absolute;left:38px;top:95px;text-align:center;font-size:11px}.monitor{width:58px;height:46px;background:#d8e6ef;border:5px solid #d8e6ef;box-shadow:inset 0 0 0 5px #447db0;margin:auto auto 7px}.window{width:min(520px,70%);height:245px;background:#edf1f4;position:absolute;left:50%;top:50%;transform:translate(-50%,-48%);border:2px solid #0a1824;color:#122433}.titlebar{height:38px;background:#1d5b8f;color:white;padding:9px 13px;font-weight:800}.winbody{padding:27px}.winbody strong{display:block;font-size:29px}.winbody p{margin:10px 0;color:#5a6d7c;font-weight:700}.startbtn{display:inline-block;background:#2c80b9;color:white;padding:10px 28px;margin-top:13px;font-weight:800}.taskbar{position:absolute;bottom:0;left:0;right:0;height:52px;background:#19222b}.tego{position:absolute;left:10px;bottom:8px;background:#2f8fc8;padding:8px 24px;font-weight:900}
+    section{padding:54px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,rgba(17,39,58,.9),rgba(10,26,40,.9));border:1px solid var(--line);border-radius:16px;padding:24px;min-height:160px}.card .k{font-size:13px;color:var(--accent2);font-weight:800;text-transform:uppercase;letter-spacing:.08em}.card h3{margin:12px 0 8px;font-size:22px}.card p{margin:0;color:var(--muted);line-height:1.55}
+    .download{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}.dlbox{background:linear-gradient(145deg,#102c43,#0b1a29);border:1px solid #2d5878;border-radius:18px;padding:30px}.dlbox h2{font-size:38px;margin:0 0 10px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0}.meta div{background:rgba(0,0,0,.16);padding:13px;border-radius:10px;color:var(--muted)}.meta b{display:block;color:white;margin-bottom:4px}.hash{word-break:break-all;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;color:#a9c7dc;background:#06101a;padding:13px;border-radius:10px;border:1px solid #1e3b50}
+    footer{padding:46px 0 64px;color:#7890a4;font-size:13px}.warn{font-size:13px;color:#9db1c5;margin-top:14px}
+    @media(max-width:760px){.navlinks{display:none}.hero{padding-top:62px}.grid{grid-template-columns:1fr}.download{grid-template-columns:1fr}.window{width:82%}.fakeos{min-height:360px}.os-title{font-size:25px}.desktop-icon{display:none}.winbody strong{font-size:22px}.meta{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav><div class="wrap navin"><div class="brand">TEGO <span>OS</span></div><div class="navlinks"><a href="#features">FEATURES</a><a href="#download">DOWNLOAD</a></div></div></nav>
+<main>
+  <div class="wrap hero">
+    <div class="eyebrow"><span class="dot"></span> TEGO OS 2.1 AVAILABLE NOW</div>
+    <h1><span class="gradient">Build your own world.</span><br>Boot it.</h1>
+    <p class="lead">TEGO OS 2.1은 x86_64 환경에서 부팅되는 독자 커널 기반의 그래픽 OS 프로젝트입니다. 직접 만든 GUI, 마우스 입력, 시작 메뉴를 하나의 부팅 가능한 ISO로 제공합니다.</p>
+    <div class="actions"><a class="btn primary" href="downloads/TEGO_OS_2.1.iso" download>⬇ TEGO OS 2.1 ISO 다운로드</a><a class="btn secondary" href="#features">기능 보기</a></div>
+    <div class="screen" aria-label="TEGO OS desktop preview">
+      <div class="chrome"><span class="c"></span><span class="c"></span><span class="c"></span></div>
+      <div class="fakeos"><div class="os-title">TEGO OS 2.1</div><div class="desktop-icon"><div class="monitor"></div>COMPUTER</div><div class="window"><div class="titlebar">WELCOME</div><div class="winbody"><strong>TEGO OS 2.1</strong><p>INDEPENDENT KERNEL</p><p>INTERACTIVE GUI</p><span class="startbtn">START</span></div></div><div class="taskbar"><span class="tego">TEGO</span></div></div>
+    </div>
+  </div>
+  <section id="features"><div class="wrap"><div class="grid">
+    <article class="card"><div class="k">Kernel</div><h3>Independent x86_64 kernel</h3><p>Linux나 Windows 위에서 실행되는 테마가 아니라 직접 부팅되는 커널 프로젝트입니다.</p></article>
+    <article class="card"><div class="k">Graphics</div><h3>Framebuffer GUI</h3><p>데스크톱, 창, 작업 표시줄과 UI를 framebuffer에 직접 렌더링합니다.</p></article>
+    <article class="card"><div class="k">Input</div><h3>Mouse support</h3><p>PS/2 마우스 입력을 처리해 커서를 움직이고 GUI 상호작용을 실험할 수 있습니다.</p></article>
+  </div></div></section>
+  <section id="download"><div class="wrap download"><div class="dlbox"><h2>Download TEGO OS 2.1</h2><p class="lead" style="font-size:17px">QEMU나 가상 머신에서 테스트할 수 있는 부팅 가능한 ISO 이미지입니다.</p><div class="actions"><a class="btn primary" href="downloads/TEGO_OS_2.1.iso" download>⬇ ISO 다운로드</a></div><p class="warn">실제 PC에 설치하기 전에는 가상 머신에서 먼저 테스트하는 것을 권장합니다.</p></div><div class="dlbox"><div class="meta"><div><b>Version</b>2.1</div><div><b>Architecture</b>x86_64</div><div><b>Image size</b>4.2M</div><div><b>Format</b>Bootable ISO</div></div><b style="display:block;margin-bottom:8px">SHA-256</b><div class="hash">cef954fb83043f2f1e3ea5d1d90f6bf8145681b5332740d8d249c9a88c5ea3d5</div></div></div></section>
+</main>
+<footer><div class="wrap">TEGO OS Project · Experimental operating system</div></footer>
+</body>
+</html>
